@@ -1,0 +1,6 @@
+@Mer1_HostAddress = http://localhost:5070
+
+GET {{Mer1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
