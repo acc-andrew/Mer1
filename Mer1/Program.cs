@@ -1,4 +1,7 @@
 
+using Mer1.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Mer1
 {
     public class Program
@@ -13,6 +16,10 @@ namespace Mer1
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Adding SQL server
+            builder.Services.AddDbContext<DataContext>(op => op.UseSqlServer(
+                      builder.Configuration.GetConnectionString("ASPNET_WebDB")));
 
             // 1.
             // API CORS
